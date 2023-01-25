@@ -1,12 +1,9 @@
 import { ButtonAuxo } from '@/components/ButtonAuxo'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <>
       <Head>
@@ -23,7 +20,9 @@ export default function Home() {
             height={37}
             priority
           />
-          <ButtonAuxo onClick={()=>{console.log('hola')}}>
+          <ButtonAuxo
+            variant={'primary'}
+            onClick={()=>{console.log('hola')}}>
             <Link href="/itineraries">Start</Link>
           </ButtonAuxo>
       </main>
