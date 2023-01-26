@@ -3,7 +3,35 @@ import Image from 'next/image'
 import { ButtonAuxo } from './ButtonAuxo'
 import Link from 'next/link'
 
-export const Nav = ({ children }) => {
+const Header = ({title}) => {
+  return (
+    <div className='w-full py-12 flex justify-between px-14'>
+      <h2 className='text-lg'>
+        {title}
+      </h2>
+      <div className='flex gap-5'>
+        <div className='flex gap-3 content-center items-center'>
+          <Image
+            src="/user.png"
+            alt="Auxo Logo"
+            width={40}
+            height={40}
+            priority
+          />
+          <div>Camilo Valencia</div>
+        </div>
+        <ButtonAuxo
+          variant={'primary'}
+          onClick={() => { console.log('?') }}>
+
+          <div>?</div>
+        </ButtonAuxo>
+      </div>
+    </div>
+  )
+}
+
+export const Nav = ({ title, children }) => {
   return (
     <div className="flex">
       <div className='relative min-w-[240px] w-[240px] h-screen border-r border-blueBorderAuxo my-5'>
@@ -20,7 +48,7 @@ export const Nav = ({ children }) => {
         <div className='flex pt-6 justify-center'>
           <ButtonAuxo
             variant={'primary'}
-            onClick={() => { console.log('hola') }}>
+            onClick={() => {}}>
             <Link
               className='flex gap-1'
               href="/itineraries">
@@ -40,7 +68,7 @@ export const Nav = ({ children }) => {
           <hr className='mx-5' style={{ borderColor: '#426294' }} />
 
           <div className='flex pt-6 justify-center'>
-            <ButtonAuxo variant={'secondary'} onClick={() => { console.log('hola') }}>
+            <ButtonAuxo variant={'secondary'} onClick={() => {}}>
               <Link
                 className='flex gap-1'
                 href="/">
@@ -58,7 +86,8 @@ export const Nav = ({ children }) => {
         </div>
       </div>
 
-      <div className=''>
+      <div className='w-full'>
+        <Header title={title} />
         {children}
       </div>
     </div>

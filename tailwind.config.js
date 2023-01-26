@@ -20,6 +20,7 @@ module.exports = {
       greenTextAuxo: '#828282',
       greenBgAuxo: '#DDF0F2',
       whiteAuxo: '#FFFFFF',
+      grayAuxo: '#F2F2F2'
     },
     extend: {
 

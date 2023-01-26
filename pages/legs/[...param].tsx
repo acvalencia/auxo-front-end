@@ -1,4 +1,5 @@
 import { LegCard } from '@/components/LegCard'
+import { Nav } from '@/components/Nav'
 import { getLeg } from '@/utils/fetchData'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -28,18 +29,20 @@ const Index = () => {
 
 
   return (
-    <div className="radio-btn-container">
-      <LegCard
-        changed={radioChangeHandler}
-        id={leg1?.id}
-        isSelected={paymentMethod === leg1?.id}
-        leg={leg1} />
-      <LegCard
-        changed={radioChangeHandler}
-        id={leg2?.id}
-        isSelected={paymentMethod === leg2?.id}
-        leg={leg2} />
-    </div>
+    <Nav title={leg1?.id}>
+      <div className="radio-btn-container">
+        <LegCard
+          changed={radioChangeHandler}
+          id={leg1?.id}
+          isSelected={paymentMethod === leg1?.id}
+          leg={leg1} />
+        <LegCard
+          changed={radioChangeHandler}
+          id={leg2?.id}
+          isSelected={paymentMethod === leg2?.id}
+          leg={leg2} />
+      </div>
+    </Nav>
   )
 }
 
