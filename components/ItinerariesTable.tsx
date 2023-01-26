@@ -10,7 +10,7 @@ export const ItinerariesTable = ({itinerariesList}) => {
         <div className='w-36'>Agent</div>
         <div className='w-36'>Agent rating</div>
       </div>
-      { itinerariesList.map( (item, index) => <ItinerariesItem key={index} itinerarie={item} /> ) }
+      { itinerariesList?.map( (item, index) => <ItinerariesItem key={index} itinerarie={item} /> ) }
     </div>
   )
 }
